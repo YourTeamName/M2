@@ -10,7 +10,7 @@ import java.util.*;
  * @author Bob
  * @version 1.1
  */
-public class Test {
+public class Person2 {
     /** Holds the persons real name */
     private String name;
     /**
