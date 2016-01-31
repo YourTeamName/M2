@@ -10,10 +10,6 @@ apply plugin: 'pmd'
 
 apply plugin: 'application'
 
-task hello << {
-   println 'Hello World'
-}
-
 sourceCompatibility = 1.8
 version = '1.0'
 mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
