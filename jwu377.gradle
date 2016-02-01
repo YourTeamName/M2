@@ -1,0 +1,32 @@
+defaultTasks 'jar'
+apply plugin: 'java'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+version = '1.0'
+mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
+
+jar {
+    manifest {
+    	     attributes	'Implementation-Title' : 'Gradle Quickstart',
+	     		'Implementation-Version' : version,
+			'Class-Path' : '../../lib/resources.jar',
+			'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+    }
+}
+
+
+//resources contains the antlab31 class
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile files('lib/resources.jar')
+}
+
+//setup a location for repositories of any libraries that need to be downloaded
+repositories {
+   mavenCentral()
+}
