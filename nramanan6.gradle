@@ -1,3 +1,4 @@
+//task if none is specified on command line
 defaultTasks 'jar'
 
 apply plugin: 'java'
@@ -15,14 +16,17 @@ version = '1.0'
 mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
 
 //Define the contents of the jar file
+//classpath directs to the jar file needed for antlab31 to
 jar {
   manifest {
      attributes  'Implementation-Title' : 'Gradle Quickstart' ,
                  'Implementation-Version' : version,
-                 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain' 
+                 'Class-Path' : '../../lib/resources.jar',
+                 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
     }
 }
 
+//resources contains the antlab31 class
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
     testCompile group: 'junit', name: 'junit', version: '4.+'
